@@ -9,15 +9,53 @@
             margin: 0;
             font-family: 'Segoe UI', sans-serif;
             scroll-behavior: smooth;
+            background: #f4f6f8;
+        }
+
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(31,41,55,0.95);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 30px;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #3b82f6;
+        }
+
+        /* HERO */
+        .hero {
+            height: 100vh;
+            background: url('portfolio-cover.png') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            background: rgba(0,0,0,0.5);
+            padding: 20px;
+            border-radius: 10px;
         }
 
         section {
-            padding: 60px 20px;
-        }
-
-        .hero {
-            height: 100vh;
-            background: url('portfolio-cover.png') no-repeat center/cover;
+            padding: 80px 20px;
         }
 
         .container {
@@ -30,22 +68,22 @@
         }
 
         .card {
-            background: #f4f6f8;
+            background: white;
             padding: 20px;
-            border-radius: 10px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
             margin-bottom: 20px;
         }
 
         .grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 15px;
+            gap: 20px;
         }
 
-        @media (max-width: 700px) {
-            .grid {
-                grid-template-columns: 1fr;
-            }
+        .project img {
+            width: 100%;
+            border-radius: 10px;
         }
 
         .btn {
@@ -56,26 +94,69 @@
             border-radius: 6px;
             text-decoration: none;
         }
+
+        /* ANIMATION */
+        .hidden {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.6s ease;
+        }
+
+        .show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #1f2937;
+            color: white;
+        }
+
+        @media (max-width: 700px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
     </style>
 </head>
 
 <body>
 
-<!-- 1 HERO (YOUR IMAGE) -->
-<section class="hero"></section>
+<!-- NAVBAR -->
+<nav>
+    <div><b>Jimson</b></div>
+    <div>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
 
-<!-- 2 ABOUT -->
-<section>
+<!-- HERO -->
+<div class="hero">
+    <h1>My Engineering Portfolio</h1>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="hidden">
 <div class="container">
 <h2>About Me</h2>
 <div class="card">
-<p>Civil engineer with experience in site supervision, quantity takeoffs, and cost estimation.</p>
+<p>I am a civil engineer specializing in estimation, drafting, and site supervision with strong attention to detail.</p>
 </div>
 </div>
 </section>
 
-<!-- 3 SKILLS -->
-<section>
+<!-- SKILLS -->
+<section id="skills" class="hidden">
 <div class="container">
 <h2>Skills</h2>
 <div class="grid">
@@ -88,155 +169,65 @@
 </div>
 </section>
 
-<!-- 4 EXPERIENCE -->
-<section>
-<div class="container">
-<h2>Experience</h2>
-<div class="card">Site Engineer – Project supervision and coordination</div>
-</div>
-</section>
-
-<!-- 5 PROJECTS -->
-<section>
+<!-- PROJECTS -->
+<section id="projects" class="hidden">
 <div class="container">
 <h2>Projects</h2>
+
 <div class="grid">
 
-<div class="card">
-<h3>Project 1</h3>
-<p>Quantity takeoff project</p>
+<div class="card project">
+<img src="project1.jpg">
+<h3>Quantity Takeoff</h3>
+<p>PlanSwift-based estimation project.</p>
 </div>
 
-<div class="card">
-<h3>Project 2</h3>
-<p>Cost estimation project</p>
+<div class="card project">
+<img src="project2.jpg">
+<h3>Cost Estimation</h3>
+<p>Excel-based budgeting and analysis.</p>
 </div>
 
 </div>
+
 </div>
 </section>
 
-<!-- 6 CERTIFICATIONS -->
-<section>
-<div class="container">
-<h2>Certifications</h2>
-<div class="card">Add your certifications here</div>
-</div>
-</section>
-
-<!-- 7 SOFTWARE -->
-<section>
-<div class="container">
-<h2>Software</h2>
-<div class="card">AutoCAD | PlanSwift | Bluebeam | Excel | Primavera</div>
-</div>
-</section>
-
-<!-- 8 EDUCATION -->
-<section>
-<div class="container">
-<h2>Education</h2>
-<div class="card">Bachelor of Civil Engineering</div>
-</div>
-</section>
-
-<!-- 9 TRAININGS -->
-<section>
-<div class="container">
-<h2>Trainings</h2>
-<div class="card">Construction training / seminars</div>
-</div>
-</section>
-
-<!-- 10 ACHIEVEMENTS -->
-<section>
-<div class="container">
-<h2>Achievements</h2>
-<div class="card">Your accomplishments</div>
-</div>
-</section>
-
-<!-- 11 SERVICES -->
-<section>
-<div class="container">
-<h2>Services</h2>
-<div class="card">Estimation | Drafting | Site Supervision</div>
-</div>
-</section>
-
-<!-- 12 WORKFLOW -->
-<section>
-<div class="container">
-<h2>Workflow</h2>
-<div class="card">Planning → Estimation → Execution</div>
-</div>
-</section>
-
-<!-- 13 PORTFOLIO DETAILS -->
-<section>
-<div class="container">
-<h2>Portfolio Details</h2>
-<div class="card">More project breakdown</div>
-</div>
-</section>
-
-<!-- 14 TESTIMONIALS -->
-<section>
-<div class="container">
-<h2>Testimonials</h2>
-<div class="card">Client feedback (optional)</div>
-</div>
-</section>
-
-<!-- 15 CV -->
-<section>
+<!-- CV -->
+<section class="hidden">
 <div class="container">
 <h2>Download CV</h2>
 <a href="CV.pdf" class="btn" download>Download My CV</a>
 </div>
 </section>
 
-<!-- 16 CONTACT -->
-<section>
+<!-- CONTACT -->
+<section id="contact" class="hidden">
 <div class="container">
 <h2>Contact</h2>
 <div class="card">
 <p>Email: your@email.com</p>
-<p>Phone: 09532570916</p>
+<p>Phone: 09XXXXXXXXX</p>
 </div>
 </div>
 </section>
 
-<!-- 17 LOCATION -->
-<section>
-<div class="container">
-<h2>Location</h2>
-<div class="card">Philippines</div>
-</div>
-</section>
+<footer>
+© 2026 Jimson Portfolio
+</footer>
 
-<!-- 18 GOALS -->
-<section>
-<div class="container">
-<h2>Career Goals</h2>
-<div class="card">To grow as a professional civil engineer</div>
-</div>
-</section>
+<!-- ANIMATION SCRIPT -->
+<script>
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                entry.target.classList.add('show');
+            }
+        });
+    });
 
-<!-- 19 PERSONAL -->
-<section>
-<div class="container">
-<h2>Personal</h2>
-<div class="card">Hardworking, detail-oriented, team player</div>
-</div>
-</section>
-
-<!-- 20 FOOTER -->
-<section>
-<div class="container">
-<p style="text-align:center;">© 2026 Jimson Portfolio</p>
-</div>
-</section>
+    document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
