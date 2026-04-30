@@ -2,43 +2,138 @@
 <html>
 <head>
     <title>Jimson | Civil Engineer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
         body {
-            font-family: Arial;
-            margin: 40px;
-            background-color: #f4f6f8;
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: #f4f6f8;
+            color: #333;
         }
-        h1 {
-            color: #222;
+
+        header {
+            background: linear-gradient(135deg, #1f2937, #374151);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
         }
-        h2 {
-            color: #444;
+
+        header h1 {
+            margin: 0;
+            font-size: 40px;
         }
+
+        header p {
+            margin: 10px 0 20px;
+            color: #d1d5db;
+        }
+
+        .btn {
+            background: #3b82f6;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+
         .section {
-            margin-bottom: 30px;
+            margin-top: 40px;
         }
+
         .card {
             background: white;
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
+        .skills ul {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .skills li {
+            background: #eef2ff;
+            padding: 10px;
+            border-radius: 6px;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .project {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
+        .project img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #777;
+        }
+
+        @media (max-width: 700px) {
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            .skills ul {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 
 <body>
 
+<header>
     <h1>Jimson</h1>
-    <p><strong>Civil Engineer | Site Engineer | Quantity Engineer</strong></p>
+    <p>Civil Engineer | Site Engineer | Quantity Engineer</p>
+    <a href="CV.pdf" class="btn" download>Download CV</a>
+</header>
+
+<div class="container">
 
     <div class="section">
         <h2>About Me</h2>
         <div class="card">
-            <p>I am a motivated civil engineer with experience in site supervision, quantity takeoffs, and cost estimation. I am skilled in AutoCAD, PlanSwift, Bluebeam, Excel, and Primavera, and I am committed to delivering accurate and efficient engineering work.</p>
+            <p>
+                I am a detail-oriented civil engineer with experience in site supervision,
+                quantity takeoffs, and cost estimation. I specialize in AutoCAD, PlanSwift,
+                Bluebeam, Excel, and Primavera, delivering accurate and efficient project results.
+            </p>
         </div>
     </div>
 
-    <div class="section">
+    <div class="section skills">
         <h2>Skills</h2>
         <div class="card">
             <ul>
@@ -53,9 +148,24 @@
 
     <div class="section">
         <h2>Projects</h2>
-        <div class="card">
-            <p><strong>Sample Project:</strong> Quantity Takeoff and Cost Estimate</p>
-            <p>Performed detailed quantity takeoffs and prepared cost estimates using PlanSwift and Excel.</p>
+        <div class="projects">
+
+            <div class="project">
+                <img src="https://via.placeholder.com/400x200" alt="Project 1">
+                <div class="project-content">
+                    <h3>Quantity Takeoff</h3>
+                    <p>Performed detailed quantity takeoffs using PlanSwift for accurate estimation.</p>
+                </div>
+            </div>
+
+            <div class="project">
+                <img src="https://via.placeholder.com/400x200" alt="Project 2">
+                <div class="project-content">
+                    <h3>Cost Estimation</h3>
+                    <p>Prepared cost estimates using Excel and project data for budgeting.</p>
+                </div>
+            </div>
+
         </div>
     </div>
 
@@ -66,6 +176,12 @@
             <p>Phone: 09XXXXXXXXX</p>
         </div>
     </div>
+
+</div>
+
+<footer>
+    © 2026 Jimson | Civil Engineer Portfolio
+</footer>
 
 </body>
 </html>
